@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Samarth Lad - Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <style>
+    body {
+  background: linear-gradient(120deg, #f8fafc 0%, #e6e6fa 100%);
+  min-height: 100vh;
+}
+.navbar {
+  border-bottom: 2px solid #4f8cff33;
+}
+.hero {
+  height: 60vh;
+  background: linear-gradient(rgba(79,140,255,0.7), rgba(34,34,34,0.7)),
+              url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1500&q=80') center/cover;
+  color: #fff;
+  display: flex; /* Added for vertical centering */
+  align-items: center; /* Added for vertical centering */
+  justify-content: center; /* Added for horizontal centering */
+  text-align: center; /* Ensure text is centered within the hero */
+}
+.animate-fade-in {
+  animation: fadeIn 1.5s;
+}
+.animate-slide-in {
+  animation: slideIn 1.2s;
+}
+@keyframes fadeIn {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+@keyframes slideIn {
+  from { opacity:0; transform: translateY(30px);}
+  to { opacity:1; transform: translateY(0);}
+}
+.edu-card, .project-card {
+  border-left: 5px solid #4f8cff;
+  transition: box-shadow .3s, border-left-color .3s;
+}
+.edu-card:hover, .project-card:hover {
+  box-shadow: 0 0 24px -6px #4f8cff44;
+  border-left-color: #2c417d;
+}
+.skill-icon {
+  font-size: 2.4rem;
+  display:inline-block;
+  margin-bottom: 6px;
+}
+.animate-btn {
+  transition: background .3s, transform .3s, box-shadow .3s;
+}
+.animate-btn:hover {
+  background: #3966a7;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 32px -8px #4f8cff55;
+}
+.contact-form input, .contact-form textarea {
+  border: 1.5px solid #4f8cffbb;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero {
+    height: auto; /* Allow hero section to adjust height based on content */
+    padding: 80px 0; /* Add some padding for better spacing */
+  }
+  .hero h1 {
+    font-size: 2.5rem; /* Smaller font size for hero title on mobile */
+  }
+  .hero p {
+    font-size: 1rem; /* Smaller font size for hero paragraph on mobile */
+  }
+  .about img {
+    margin-bottom: 1.5rem;
+    object-fit: cover; /* Add space below image on mobile */
+  }
+  .edu-card, .project-card {
+    margin-bottom: 1.5rem; /* Add space between cards on mobile */
+  }
+  .skill-icon {
+    font-size: 2rem; /* Slightly smaller skill icons on mobile */
+  }
+  .navbar-brand {
+    font-size: 1.2rem; /* Adjust brand font size */
+  }
+  .navbar-nav .nav-link {
+    text-align: center; /* Center nav links when collapsed */
+  }
+}
+
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 2rem; /* Even smaller font size for hero title on very small screens */
+  }
+  .hero p {
+    font-size: 0.9rem; /* Even smaller font size for hero paragraph */
+  }
+  .btn-lg {
+    padding: 0.6rem 1.2rem; /* Adjust button padding */
+    font-size: 0.9rem; /* Adjust button font size */
+  }
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Samarth Lad</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container animate-fade-in">
+      <h1 class="display-3 fw-bold mb-3">Hi, I'm Samarth Lad</h1>
+      <p class="lead mb-4">BCA Graduate • Aspiring Developer • Web Enthusiast</p>
+      <a href="#contact" class="btn btn-primary btn-lg me-2">Hire Me</a>
+      <a href="mailto:samarthlad2004@gmail.com" class="btn btn-outline-light btn-lg">Email</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-5">
+    <div class="container animate-slide-in">
+      <div class="row align-items-center">
+        <div class="col-lg-5 mb-4 mb-lg-0 text-center"> <!-- Added text-center for mobile image centering -->
+          <img src="me-min.jpg" alt="Samarth Lad" class="img-fluid rounded-circle shadow-lg" style="max-width: 250px;"> <!-- Added max-width for image -->
+        </div>
+        <div class="col-lg-7 text-center text-lg-start"> <!-- Adjusted text alignment for mobile -->
+          <h2 class="mb-3">About Me</h2>
+          <p>
+            Motivated BCA graduate with hands-on web development experience, a strong foundation in Java and MySQL, and a passion for user-centric software. Eager to learn and committed to delivering project results in collaborative environments.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="bg-light py-5">
+    <div class="container animate-fade-in">
+      <h2 class="mb-4 text-center">Education</h2>
+      <div class="row">
+        <div class="col-md-4 col-sm-6 mb-4"> <!-- Added col-sm-6 for better stacking on smaller screens -->
+          <div class="edu-card shadow-sm p-4 rounded bg-white">
+            <h5>BCA</h5>
+            <p class="mb-1">Sangameshwar College, Solapur (2025)</p>
+            <span class="badge bg-primary">7.93 CGPA</span>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4"> <!-- Added col-sm-6 -->
+          <div class="edu-card shadow-sm p-4 rounded bg-white">
+            <h5>HSC (XII)</h5>
+            <p class="mb-1">English School &amp; Jr. College, Mangalwedha (2022)</p>
+            <span class="badge bg-secondary">61.33%</span>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12 mb-4"> <!-- Added col-sm-12 to ensure it takes full width if only one left -->
+          <div class="edu-card shadow-sm p-4 rounded bg-white">
+            <h5>SSC (X)</h5>
+            <p class="mb-1">DMKG English School, Begampur (2020)</p>
+            <span class="badge bg-success">78.60%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-5">
+    <div class="container animate-slide-in">
+      <h2 class="mb-4 text-center">Projects</h2>
+      <div class="project-card shadow p-4 rounded mb-3">
+        <h5>ONEMEAL – Online Food Ordering System</h5>
+        <p>
+          <strong>Duration:</strong> 1 Month<br>
+          <strong>Tech:</strong> HTML, CSS, Core Java, MySQL
+        </p>
+        <p>
+          Built a full-stack web app for food ordering: Designed a responsive UI (HTML/CSS), implemented backend logic in Java, and set up a MySQL database.
+        </p>
+      </div>
+      <div class="project-card shadow p-4 rounded mb-3">
+        <h5>Amazon UI Clone <span class="badge bg-warning text-dark">Internship at Cognifyz</span></h5>
+        <p>
+          Developed a replica of Amazon’s UI using HTML, CSS & JS; gained real-world experience in development cycles and teamwork.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="bg-light py-5">
+    <div class="container animate-fade-in">
+      <h2 class="mb-4 text-center">Technical Skills</h2>
+      <div class="row text-center">
+        <div class="col-6 col-md-3 mb-3">
+          <span class="skill-icon">&#x2318;</span>
+          <div>Java</div>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <span class="skill-icon">&#x1f310;</span>
+          <div>HTML, CSS, JS</div>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <span class="skill-icon">&#x1f4bb;</span>
+          <div>MySQL</div>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <span class="skill-icon">&#x1f50e;</span>
+          <div>Bootstrap</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5">
+    <div class="container animate-slide-in">
+      <h2 class="mb-4 text-center">Contact Me</h2>
+      <form class="contact-form mx-auto" style="max-width:500px;" method="post" action="ContactServlet">
+        <div class="mb-3">
+          <input type="text" name="name" placeholder="Your Name" required class="form-control">
+        </div>
+        <div class="mb-3">
+          <input type="email" name="email" placeholder="Your Email" required class="form-control">
+        </div>
+        <div class="mb-3">
+          <textarea name="message" rows="4" placeholder="Your Message" required class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 animate-btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white-50 py-3 text-center mt-auto">
+    <div>© 2025 Samarth Ashok Lad | <a href="mailto:samarthlad2004@gmail.com" class="text-white">samarthlad2004@gmail.com</a></div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>// Animations for on-scroll reveal
+document.addEventListener('DOMContentLoaded', () => {
+  const animateEls = document.querySelectorAll('.animate-fade-in, .animate-slide-in');
+  animateEls.forEach(el => {
+    el.style.opacity = 0;
+    el.style.transition = "opacity 1s, transform 1s";
+    el.getBoundingClientRect(); // force reflow
+  });
+  let reveal = function() {
+    animateEls.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if(rect.top < window.innerHeight - 50) {
+        el.style.opacity = 1;
+        el.style.transform = "none";
+      }
+    });
+  };
+  window.addEventListener('scroll', reveal);
+  reveal();
+});
+
+// Smooth scrolling for navbar
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function(e) {
+    if (this.hash && document.querySelector(this.hash)) {
+      e.preventDefault();
+      document.querySelector(this.hash).scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  });
+});</script>
+</body>
+</html>
